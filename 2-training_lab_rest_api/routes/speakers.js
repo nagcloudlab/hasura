@@ -18,10 +18,12 @@ router.use('/:id', (req, res, next) => {
 router.get('/', function (req, res, next) {
   res.json(speakers);
 });
+
 //GET
 router.get('/:id', function (req, res, next) {
   res.json(req.speaker);
 });
+
 //POST
 router.post('/', function (req, res, next) {
   let body = req.body
@@ -38,6 +40,7 @@ router.patch('/:id', function (req, res, next) {
   });
   res.json(req.speaker);
 });
+
 //DELETE
 router.delete('/:id', function (req, res, next) {
   speakers = speakers.filter(speaker => speaker.id = req.params.id)
