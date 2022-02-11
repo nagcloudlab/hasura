@@ -1,0 +1,22 @@
+
+
+
+
+ complexities while implementing graphQL-API with existing datasources ( SQL , third-party services )
+ ---------------------------------------------------------------------------------------------------
+
+
+ ==> too much code / time
+ ==> must design schema manually based data model
+ ==> must write resolver functions manually for every field / filter conditions
+ ==> must write auth
+ ==> must implement caching  support
+ ==> stateless execution
+ etc...
+
+
+ Soln:
+
+    => Hasura
+
+------------------------------------------------------------------------------------------------
