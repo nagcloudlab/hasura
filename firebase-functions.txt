@@ -1,0 +1,6 @@
+
+
+https://us-central1-hasura-course-9dbdc.cloudfunctions.net/notifyAboutComment
+https://us-central1-hasura-course-9dbdc.cloudfunctions.net/createAccount
+https://us-central1-hasura-course-9dbdc.cloudfunctions.net/getProfile
+https://us-central1-hasura-course-9dbdc.cloudfunctions.net/userProfile
