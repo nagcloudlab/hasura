@@ -1,0 +1,5 @@
+- name: user_profile
+  definition:
+    url: http://host.docker.internal:5001/hasura-course-9dbdc/us-central1/getUserProfile
+    timeout_seconds: 60
+  comment: ""

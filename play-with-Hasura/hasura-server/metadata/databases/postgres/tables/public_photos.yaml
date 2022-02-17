@@ -1,0 +1,68 @@
+table:
+  name: photos
+  schema: public
+object_relationships:
+- name: city
+  using:
+    foreign_key_constraint_on: city_id
+- name: city_name
+  using:
+    foreign_key_constraint_on: city_id
+array_relationships:
+- name: comments
+  using:
+    foreign_key_constraint_on:
+      column: photo_id
+      table:
+        name: comments
+        schema: public
+insert_permissions:
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - description
+    - photo_url
+    set:
+      user_id: x-hasura-User-Id
+  role: user
+select_permissions:
+- permission:
+    allow_aggregations: true
+    columns:
+    - description
+    - photo_url
+    - user_id
+    - created_at
+    - updated_at
+    - id
+    filter: {}
+  role: anonymous
+- permission:
+    columns:
+    - created_at
+    - description
+    - id
+    - is_published
+    - photo_url
+    - updated_at
+    - user_id
+    filter: {}
+  role: user
+update_permissions:
+- permission:
+    check:
+      user_id:
+        _eq: X-Hasura-User-Id
+    columns:
+    - description
+    filter:
+      user_id:
+        _eq: X-Hasura-User-Id
+  role: user
+delete_permissions:
+- permission:
+    filter:
+      user_id:
+        _eq: X-Hasura-User-Id
+  role: user

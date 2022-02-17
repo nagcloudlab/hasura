@@ -20,20 +20,13 @@ services:
       ## this env var can be used to add the above postgres database to Hasura as a data source. this can be removed/updated based on your needs
       PG_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
       ## enable the console served by server
-      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "false" # set to "false" to disable console
       ## enable debugging mode. It is recommended to disable this in production
       HASURA_GRAPHQL_DEV_MODE: "true"
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       ## uncomment next line to set an admin secret
       HASURA_GRAPHQL_ADMIN_SECRET: 123456
-      ## Verify JWT Token
-      # HASURA_GRAPHQL_JWT_SECRET: '{"type":"HS256","key":"6d7fg56df-76g78df6g98d7fg-76g9867df09g87-655865"}'
-      ## Firebase -JWT secret
-      HASURA_GRAPHQL_JWT_SECRET: '{"type":"RS256", "allowed_skew":5, "jwk_url": "https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com", "audience": "hasura-course-9dbdc", "issuer": "https://securetoken.google.com/hasura-course-9dbdc"}'
-      ## Auth0 - JWT secret
       # HASURA_GRAPHQL_JWT_SECRET: '{"type": "RS512", "key": "-----BEGIN CERTIFICATE-----\nMIIDDTCCAfWgAwIBAgIJSCip4rwJ3T8+MA0GCSqGSIb3DQEBCwUAMCQxIjAgBgNV\nBAMTGWRldi10cXBhMTg1bi51cy5hdXRoMC5jb20wHhcNMjExMDA1MTIwNzQ5WhcN\nMzUwNjE0MTIwNzQ5WjAkMSIwIAYDVQQDExlkZXYtdHFwYTE4NW4udXMuYXV0aDAu\nY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4+fefaXq4Fm8m+s8\nqq2XYm/oWK+WXeBnUPeIPV7Slg3SYwWnejZOLhNbicLmtuDcgQD8qapvqO7Yfrjh\noeQFg8SYvGHr0g1GFK6GHP+QKl5wILe6BClgTaDxBHlOFnFnKAxHV7jLtbVjQgJa\nie90mwNN5DRq7ZouXhjSJcFPHlxJmF+zbkrp4WVVmhDP42J8oW9tGgYsCnBwki6O\nD5USYSCE9otwSJS2gvxQ8laaG+ddFgkmePrMgslCxaRPWayPKac5qqrnEJUjpBvi\nLoGUqmAwvzKPad/iejKFg6FPJuy0Jx/RMTEXzvIGhRsoshU3NwPv3ZeYK2Qfr+Uh\nCW8uoQIDAQABo0IwQDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBSiQxGgNqPj\n94Lpe+7rosw3pL6uwDAOBgNVHQ8BAf8EBAMCAoQwDQYJKoZIhvcNAQELBQADggEB\nAFrNeFXOvJxGiRvCsvqOAF369RcJzBkQCqHDlifex8K9+EL53A0t24ZQ7Jx1P+J5\nVbHUCBdelrLY74CfvK+59ho8P8TEM+D2JWhiv+LUZZr6wX5sNKUsTQ/iMnenQQJS\nzDUfXOOPdvvOwMpFy//jLd41JRpDgYAdt2/2QSDQLQjs7UJiRLY7lNQ6fgIZG8eL\n7lie2PcCkkdPQD9+tpk8K9cY3/SuK0/ew1vu4oQ1NUoJmYpGs22ahetrBVuVY+2g\nmcZeKCP7dNBWG17sFKz5vOcF4e0SnutYUm0nXAneauBC/02HBYlOJ8EewgN1MUZS\nvvZDKy4tXmwZH2+7DAabQck=\n-----END CERTIFICATE-----"}'
-      HASURA_GRAPHQL_UNAUTHORIZED_ROLE: anonymous
-      ## Auth Hook
-      # HASURA_GRAPHQL_AUTH_HOOK: http://host.docker.internal:5001/hasura-course-9dbdc/us-central1/authHook
+
 volumes:
   db_data:

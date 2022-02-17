@@ -6,8 +6,8 @@ import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
 import { notifyAboutCommentHandler } from "./notifyAboutComment";
 import { createUserHandler } from "./createUser";
-import { getProfileHandler } from "./getProfile";
-import initApolloServer from "./remoteSchema";
+import { getUserHandler } from "./getUser";
+import initApolloServer from "./getUserProfile";
 import { loginHandler } from "./login";
 import { authHookHandler } from "./authHook";
 
@@ -24,9 +24,9 @@ export const notifyAboutComment = functions.https.onRequest(
     notifyAboutCommentHandler
 );
 export const createUser = functions.https.onRequest(createUserHandler);
-export const getProfile = functions.https.onRequest(getProfileHandler);
+export const getUser = functions.https.onRequest(getUserHandler);
 // GraphQL
-export const userProfile = functions.https.onRequest(
+export const getUserProfile = functions.https.onRequest(
     initApolloServer.createHandler()
 );
 export const login = functions.https.onRequest(loginHandler);

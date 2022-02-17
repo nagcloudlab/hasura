@@ -1,0 +1,45 @@
+type Mutation {
+  create_user(
+    credentials: UserInput!
+  ): User
+}
+
+type Query {
+  get_user(
+    id: ID!
+  ): User
+}
+
+type Mutation {
+  login(
+    credentials: Credentials!
+  ): LoginObject
+}
+
+input UserInput {
+  email: String!
+  password: String!
+  displayName: String
+}
+
+input Credentials {
+  email: String!
+  password: String!
+}
+
+type User {
+  id: String!
+  email: String!
+  displayName: String
+}
+
+type LoginObject {
+  accessToken: String!
+}
+
+type Todo {
+  id: Int!
+  title: String
+  completed: Boolean
+}
+
